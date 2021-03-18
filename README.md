@@ -28,8 +28,8 @@ cargo test
 ## Usage
 
 ### Library
-Add the following to your crate root.
-```
+Add the following to your Cargo.toml.
+```toml
 [dependencies]
 ectoken = "^0.2"
 ```
@@ -46,7 +46,7 @@ To Decrypt:
 ```
 
 #### Example
-```
+```rust
 use ectoken;
 
 fn example() {
