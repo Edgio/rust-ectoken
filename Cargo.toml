@@ -1,0 +1,16 @@
+[package]
+name = "ectoken"
+version = "0.3.0-dev"
+authors = ["Benoît Burnichon <bburnichon@gmail.com>"]
+edition = "2018"
+description = "Token Generator for Edgecast Token-Based Authentication from Verizon Digital Media Services"
+license = "Apache-2.0"
+homepage = "https://github.com/VerizonDigital/rust-ectoken.git"
+repository = "https://github.com/VerizonDigital/rust-ectoken.git"
+readme = "README.md"
+
+[dependencies]
+aes-gcm = "^0.8"
+rand = "^0.8"
+base64 ="^0.13"
+sha2 = "^0.9"

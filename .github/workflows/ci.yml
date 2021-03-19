@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macOS-latest
+        rust:
+          - 1.41.0
+          - stable
+          - beta
+        include:
+          - os: ubuntu-latest
+            rust: nightly
+            allow_failure: true
+          - os: macOS-latest
+            rust: nightly
+            allow_failure: true
+    env:
+      RUST_BACKTRACE: 1
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ matrix.rust }}
+          override: true
+      - name: Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --all --verbose
+        env:
+          TARGET: ${{ matrix.target }}
+        continue-on-error: ${{ matrix.allow_failure }}
+      - name: Run tests
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --all --verbose
+        env:
+          TARGET: ${{ matrix.target }}
+        continue-on-error: ${{ matrix.allow_failure }}
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          profile: minimal
+          components: rustfmt
+          override: true
+      - name: Run fmt check
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
