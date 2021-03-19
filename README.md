@@ -1,3 +1,7 @@
+![CI](https://github.com/VerizonDigital/rust-ectoken/workflows/CI/badge.svg)
+[![crates.io](https://img.shields.io/crates/v/ectoken.svg)](https://crates.io/crates/ectoken)
+[![Docs](https://docs.rs/ectoken/badge.svg)](https://docs.rs/ectoken)
+
 ![Verizon Digital Media Services](https://images.verizondigitalmedia.com/2016/03/vdms-30.png)
 
 # rust-ectoken
