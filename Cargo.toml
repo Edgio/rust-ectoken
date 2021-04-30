@@ -10,7 +10,7 @@ repository = "https://github.com/VerizonDigital/rust-ectoken.git"
 readme = "README.md"
 
 [dependencies]
-aes-gcm = "^0.8"
+aes-gcm = "^0.9"
 rand = "^0.8"
 base64 ="^0.13"
 sha2 = "^0.9"
