@@ -16,7 +16,7 @@ jobs:
           - ubuntu-latest
           - macOS-latest
         rust:
-          - 1.41.0
+          - 1.49.0
           - stable
           - beta
         include:
