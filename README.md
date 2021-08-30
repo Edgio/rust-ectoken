@@ -1,8 +1,8 @@
-![CI](https://github.com/VerizonDigital/rust-ectoken/workflows/CI/badge.svg)
+![CI](https://github.com/EdgeCast/rust-ectoken/workflows/CI/badge.svg)
 [![crates.io](https://img.shields.io/crates/v/ectoken.svg)](https://crates.io/crates/ectoken)
 [![Docs](https://docs.rs/ectoken/badge.svg)](https://docs.rs/ectoken)
 
-![Verizon Digital Media Services](https://images.verizondigitalmedia.com/2016/03/vdms-30.png)
+<img src="assets/edgecast_black.png" width="300"/>
 
 # rust-ectoken
 > _Token Generator fo EdgeCast Token-Based Authentication implemented in Rust_
