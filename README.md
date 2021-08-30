@@ -5,7 +5,7 @@
 <img src="assets/edgecast_black.png" width="300"/>
 
 # rust-ectoken
-> _Token Generator fo EdgeCast Token-Based Authentication implemented in Rust_
+> _Token Generator for EdgeCast Token-Based Authentication implemented in Rust_
 
 Token-Based Authentication safeguards against hotlinking by adding a token requirement to requests for content secured by it. This token, which must be defined in the request URL's query string, defines the criteria that must be met before the requested content may be served via the CDN. This repository contains source code for a Rust implementation.
 
