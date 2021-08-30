@@ -2,7 +2,7 @@
 [![crates.io](https://img.shields.io/crates/v/ectoken.svg)](https://crates.io/crates/ectoken)
 [![Docs](https://docs.rs/ectoken/badge.svg)](https://docs.rs/ectoken)
 
-![EdgeCast](assets/edgecast_black.png | width=300)
+<img src="assets/edgecast_black.png" width="300"/>
 
 # rust-ectoken
 > _Token Generator fo EdgeCast Token-Based Authentication implemented in Rust_
