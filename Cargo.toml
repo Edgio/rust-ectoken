@@ -1,12 +1,12 @@
 [package]
 name = "ectoken"
-version = "0.3.1"
-authors = ["Benoît Burnichon <bburnichon@gmail.com>"]
+version = "0.4.0"
+authors = ["Benoît Burnichon <bburnichon@gmail.com>", "Derek Shiell <derek.shiell@verizondigitalmedia.com>"]
 edition = "2018"
-description = "Token Generator for Edgecast Token-Based Authentication from Verizon Digital Media Services"
+description = "Token Generator for Edgecast Token-Based Authentication"
 license = "Apache-2.0"
-homepage = "https://github.com/VerizonDigital/rust-ectoken.git"
-repository = "https://github.com/VerizonDigital/rust-ectoken.git"
+homepage = "https://github.com/EdgeCast/rust-ectoken.git"
+repository = "https://github.com/EdgeCast/rust-ectoken.git"
 readme = "README.md"
 
 [dependencies]
