@@ -1,7 +1,7 @@
 [package]
 name = "ectoken"
 version = "0.4.1"
-authors = ["Benoît Burnichon <bburnichon@gmail.com>", "Derek Shiell <derek.shiell@verizondigitalmedia.com>"]
+authors = ["Benoît Burnichon <bburnichon@gmail.com>", "Derek Shiell <derek.shiell@edgecast.com>"]
 edition = "2018"
 description = "Token Generator for Edgecast Token-Based Authentication"
 license = "Apache-2.0"
