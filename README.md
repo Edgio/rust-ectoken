@@ -35,7 +35,7 @@ cargo test
 Add the following to your Cargo.toml.
 ```toml
 [dependencies]
-ectoken = "^0.3"
+ectoken = "^0.4"
 ```
 
 ### CLI
