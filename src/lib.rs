@@ -4,9 +4,9 @@
 use std::error;
 use std::fmt;
 
-use aes_gcm::aead::{Aead, generic_array::GenericArray, generic_array::typenum::U32, NewAead};
+use aes_gcm::aead::{generic_array::typenum::U32, generic_array::GenericArray, Aead, NewAead};
 use aes_gcm::Aes256Gcm;
-use base64::{Engine as _, engine::general_purpose::URL_SAFE_NO_PAD as base64_codec};
+use base64::{engine::general_purpose::URL_SAFE_NO_PAD as base64_codec, Engine as _};
 use rand::Rng;
 use sha2::{Digest, Sha256};
 
@@ -50,7 +50,7 @@ impl Ec3Key {
     pub fn decrypt(&self, token: &str) -> Result<String, DecryptionError> {
         let token = base64_codec.decode(token)?;
 
-        if token.len() < (NONCE_LEN + TAG_LEN) as usize {
+        if token.len() < NONCE_LEN + TAG_LEN {
             return Err(DecryptionError::IOError("invalid input length"));
         }
 
