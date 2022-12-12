@@ -12,5 +12,5 @@ readme = "README.md"
 [dependencies]
 aes-gcm = "^0.9"
 rand = "^0.8"
-base64 ="^0.13"
+base64 ="^0.20"
 sha2 = "^0.10"
