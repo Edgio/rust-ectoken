@@ -1,18 +1,23 @@
 #![deny(missing_docs)]
 //! This module could be used to encrypt/decrypt tokens
 
-use aes_gcm::aead::{generic_array::typenum::U32, generic_array::GenericArray, Aead, NewAead};
-use aes_gcm::Aes256Gcm;
-use rand::Rng;
-use sha2::{Digest, Sha256};
 use std::error;
 use std::fmt;
+
+use aes_gcm::aead::{Aead, generic_array::GenericArray, generic_array::typenum::U32, NewAead};
+use aes_gcm::Aes256Gcm;
+use base64::alphabet::URL_SAFE;
+use base64::engine::fast_portable::{FastPortable, NO_PAD};
+use rand::Rng;
+use sha2::{Digest, Sha256};
 
 const NONCE_LEN: usize = 12;
 const TAG_LEN: usize = 16;
 
+const BASE64_ENGINE: FastPortable = FastPortable::from(&URL_SAFE, NO_PAD);
+
 /// Real derived key
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq)]
 pub struct Ec3Key(pub GenericArray<u8, U32>);
 
 impl Ec3Key {
@@ -41,12 +46,12 @@ impl Ec3Key {
         let mut encrypted: Vec<u8> = Vec::from(nonce.as_slice());
         encrypted.append(&mut ciphertext);
 
-        base64::encode_config(&encrypted, base64::URL_SAFE_NO_PAD)
+        base64::encode_engine(&encrypted, &BASE64_ENGINE)
     }
 
     /// Decrypt given token with already derived key
     pub fn decrypt(&self, token: &str) -> Result<String, DecryptionError> {
-        let token = base64::decode_config(token, base64::URL_SAFE_NO_PAD)?;
+        let token = base64::decode_engine(token, &BASE64_ENGINE)?;
 
         if token.len() < (NONCE_LEN + TAG_LEN) as usize {
             return Err(DecryptionError::IOError("invalid input length"));
