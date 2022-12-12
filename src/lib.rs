@@ -4,7 +4,7 @@
 use std::error;
 use std::fmt;
 
-use aes_gcm::aead::{Aead, generic_array::GenericArray, generic_array::typenum::U32, NewAead};
+use aes_gcm::aead::{generic_array::typenum::U32, generic_array::GenericArray, Aead, NewAead};
 use aes_gcm::Aes256Gcm;
 use base64::alphabet::URL_SAFE;
 use base64::engine::fast_portable::{FastPortable, NO_PAD};
