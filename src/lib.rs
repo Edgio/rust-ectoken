@@ -1,8 +1,8 @@
 #![deny(missing_docs)]
 //! This module could be used to encrypt/decrypt tokens
 
-use aes_gcm::aead::{generic_array::typenum::U32, generic_array::GenericArray, Aead, NewAead};
-use aes_gcm::Aes256Gcm;
+use aes_gcm::aead::{generic_array::typenum::U32, generic_array::GenericArray, Aead};
+use aes_gcm::{Aes256Gcm, KeyInit};
 use rand::Rng;
 use sha2::{Digest, Sha256};
 use std::error;
@@ -48,7 +48,7 @@ impl Ec3Key {
     pub fn decrypt(&self, token: &str) -> Result<String, DecryptionError> {
         let token = base64::decode_config(token, base64::URL_SAFE_NO_PAD)?;
 
-        if token.len() < (NONCE_LEN + TAG_LEN) as usize {
+        if token.len() < (NONCE_LEN + TAG_LEN) {
             return Err(DecryptionError::IOError("invalid input length"));
         }
 
