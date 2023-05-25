@@ -9,7 +9,7 @@
 
 Token-Based Authentication safeguards against hotlinking by adding a token requirement to requests for content secured by it. This token, which must be defined in the request URL's query string, defines the criteria that must be met before the requested content may be served via the CDN. This repository contains source code for a Rust implementation.
 
-Written against Rust 2018. (Minimum rustc version 1.49.0).
+Written against Rust 2021. (Minimum rustc version 1.60.0).
 
 ## Table of Contents
 
@@ -35,7 +35,7 @@ cargo test
 Add the following to your Cargo.toml.
 ```toml
 [dependencies]
-ectoken = "^0.4"
+ectoken = "0.5"
 ```
 
 ### CLI

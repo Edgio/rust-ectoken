@@ -1,16 +1,16 @@
 [package]
 name = "ectoken"
-version = "0.4.4"
+version = "0.5.0"
 authors = ["Benoît Burnichon <bburnichon@gmail.com>", "Derek Shiell <derek.shiell@edgecast.com>"]
-edition = "2018"
+edition = "2021"
 description = "Token Generator for Edgecast Token-Based Authentication"
 license = "Apache-2.0"
-homepage = "https://github.com/EdgeCast/rust-ectoken.git"
-repository = "https://github.com/EdgeCast/rust-ectoken.git"
+homepage = "https://github.com/Edgeio/rust-ectoken.git"
+repository = "https://github.com/Edgeio/rust-ectoken.git"
 readme = "README.md"
 
 [dependencies]
-aes-gcm = "^0.9"
-rand = "^0.8"
-base64 ="^0.13"
-sha2 = "^0.10"
+aes-gcm = "0.10"
+rand = "0.8"
+base64 ="0.21"
+sha2 = "0.10"
